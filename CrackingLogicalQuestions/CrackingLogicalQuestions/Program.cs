@@ -11,11 +11,23 @@ namespace CrackingLogicalQuestions
         static void Main(string[] args)
         {
             LogicalFunctionImplementation logics = new LogicalFunctionImplementation();
-            //Reverese a string
-            Console.WriteLine("Please Input a string");
-            Console.WriteLine(logics.ReverseString(Console.ReadLine()));
+            bool canContinue = true;
+            while (canContinue)
+            {
+                canContinue = false;
 
-            Console.ReadLine();
+                //Reverese a string
+                Console.WriteLine("Please Input a string");
+                //Console.WriteLine(logics.ReverseString(Console.ReadLine()));
+                Console.WriteLine(logics.IsPalindrome(Console.ReadLine()));
+
+                Console.WriteLine("Continue, Yes or No ?");
+                if (Convert.ToString(Console.ReadLine()).Trim().ToUpper() == "YES")
+                    canContinue = true;
+
+            }
+            Console.WriteLine("This program is about to be terminated !!");
+            Console.Read();           
         }
        
     }

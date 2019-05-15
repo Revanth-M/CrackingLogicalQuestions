@@ -28,5 +28,32 @@ namespace CrackingLogicalQuestions
 
             return $"LINQ Output - [{outputStr}]. CHAR ARRAY Output - [{outputStrUsingCharArray}]";
         }
+
+        public string IsPalindrome(string inputStr)
+        {
+            bool isPalindrome = false;
+            bool isPalindromeFromCharArrayCheck = true;
+            string outputStr = "";
+
+            //LINQ Function 
+            IEnumerable<char> reversedChar = inputStr.Reverse();
+            foreach (var item in reversedChar)
+                outputStr += item;
+
+            if (string.Compare(inputStr, outputStr, true) == 0)
+                isPalindrome = true;
+
+            //Using Array's 
+            char[] characterArrayOfGivenString = inputStr.ToCharArray();
+            for (int i = 0, j = inputStr.Length - 1; i < j; i++, j--)
+            {
+                if (inputStr[j] != inputStr[i])
+                {
+                    isPalindromeFromCharArrayCheck = false;
+                    break;
+                }
+            }
+            return $"{inputStr} is Palindrome - {isPalindrome} ";
+        }
     }
 }
