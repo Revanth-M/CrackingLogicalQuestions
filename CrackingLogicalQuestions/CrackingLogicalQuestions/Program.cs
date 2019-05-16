@@ -17,12 +17,18 @@ namespace CrackingLogicalQuestions
                 canContinue = false;
 
                 //Reverese a string
-                Console.WriteLine("Please Input a string");
+                //Console.WriteLine("Please Input a string");
                 //Console.WriteLine(logics.ReverseString(Console.ReadLine()));
-                Console.WriteLine(logics.IsPalindrome(Console.ReadLine()));
+                //Console.WriteLine(logics.IsPalindrome(Console.ReadLine()));
+                int[] inputArray = new int[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    inputArray[i] = Convert.ToInt16( Console.ReadLine());
+                }
+                Console.WriteLine(logics.Return3rdLargestIntegerInArray(inputArray));
 
-                Console.WriteLine("Continue, Yes or No ?");
-                if (Convert.ToString(Console.ReadLine()).Trim().ToUpper() == "YES")
+                Console.WriteLine("Continue, Y or N ?");
+                if (Convert.ToString(Console.ReadLine()).Trim().ToUpper() == "Y")
                     canContinue = true;
 
             }

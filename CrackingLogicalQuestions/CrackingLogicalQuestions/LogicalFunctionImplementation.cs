@@ -55,5 +55,34 @@ namespace CrackingLogicalQuestions
             }
             return $"{inputStr} is Palindrome - {isPalindrome} ";
         }
+
+        public int AngleBetweenTime(decimal inputHr, decimal inputMinute)
+        {
+            return 0;
+        }
+
+        public int Return3rdLargestIntegerInArray(int[] inputArray)
+        {
+            int max3Integer = int.MinValue;
+            int max2Integer = int.MinValue;
+            int max1Integer = int.MinValue;
+            for(int i=0; i < inputArray.Length-1; i++)
+            {
+                if (inputArray[i] > max1Integer)
+                {
+                    max3Integer = max2Integer;
+                    max2Integer = max1Integer;
+                    max1Integer = inputArray[i];
+                }
+                else if (inputArray[i] > max2Integer)
+                {
+                    max3Integer = max2Integer;
+                    max2Integer = inputArray[i];
+                }
+                else if (inputArray[i] > max3Integer)
+                    max3Integer = inputArray[i];
+            }
+            return max3Integer;
+        }
     }
 }
