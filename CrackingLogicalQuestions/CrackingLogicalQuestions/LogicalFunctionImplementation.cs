@@ -84,5 +84,22 @@ namespace CrackingLogicalQuestions
             }
             return max3Integer;
         }
+
+        public int[] Return2DimensionalTo1DimensionalArray(int[,] inputArray)
+        {
+            int[] outputArray = new int[inputArray.Length];
+            int index = 0;
+            int height = inputArray.GetLength(0);
+            int width = inputArray.GetLength(1);
+            for(int x=0; x<height; x++)
+            {
+                for(int y=0; y < width; y++)
+                {
+                    outputArray[index] = inputArray[x,y];
+                    index++;
+                }
+            }
+            return outputArray;
+        }
     }
 }
