@@ -85,21 +85,34 @@ namespace CrackingLogicalQuestions
             return max3Integer;
         }
 
-        public int[] Return2DimensionalTo1DimensionalArray(int[,] inputArray)
+        public string Return2DimensionalTo1DimensionalArray(int[,] inputArray)
         {
-            int[] outputArray = new int[inputArray.Length];
+            int[] columnWiseArray = new int[inputArray.Length];
+            int[] rowWiseArray = new int[inputArray.Length];
             int index = 0;
+
             int height = inputArray.GetLength(0);
             int width = inputArray.GetLength(1);
             for(int x=0; x<height; x++)
             {
                 for(int y=0; y < width; y++)
                 {
-                    outputArray[index] = inputArray[x,y];
+                    columnWiseArray[index] = inputArray[x,y];
                     index++;
                 }
             }
-            return outputArray;
+
+            index = 0;
+            for (int x = 0; x < width; x++)
+            {
+                for (int y = 0; y < height; y++)
+                {
+                    rowWiseArray[index] = inputArray[y, x];
+                    index++;
+                }
+            }
+
+            return $"Column Wise Array { string.Join(" ", columnWiseArray) }, Row Wise Array {string.Join(" ",rowWiseArray)}"; 
         }
     }
 }
