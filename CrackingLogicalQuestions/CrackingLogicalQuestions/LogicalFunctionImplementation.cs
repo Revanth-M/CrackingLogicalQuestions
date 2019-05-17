@@ -98,6 +98,7 @@ namespace CrackingLogicalQuestions
                 for(int y=0; y < width; y++)
                 {
                     columnWiseArray[index] = inputArray[x,y];
+
                     index++;
                 }
             }
@@ -113,6 +114,16 @@ namespace CrackingLogicalQuestions
             }
 
             return $"Column Wise Array { string.Join(" ", columnWiseArray) }, Row Wise Array {string.Join(" ",rowWiseArray)}"; 
+        }
+
+        public string SumOfDigitsOfPositiveInteger(int inputInteger)
+        {
+            char[] transformedString = Convert.ToString(inputInteger).ToCharArray();
+            int resultedTotal = 0;
+            foreach(char item in transformedString)
+                resultedTotal = resultedTotal + item;
+
+            return $"Given Int total is {resultedTotal}";
         }
     }
 }
