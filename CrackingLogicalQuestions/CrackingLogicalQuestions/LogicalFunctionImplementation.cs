@@ -125,5 +125,24 @@ namespace CrackingLogicalQuestions
 
             return $"Given Int total is {resultedTotal}";
         }
+
+        public string[] UniqueNames(string[] names1, string[] names2)
+        {
+            List<string> finalResult = new List<string>();
+
+            foreach (var item in names1)
+                finalResult.Add(item);
+
+            foreach (var item in names2)
+                finalResult.Add(item);
+
+            finalResult = finalResult.Distinct().ToList();
+
+            string[] newStringList = new string[finalResult.Count];
+            for (int i = 0; i < finalResult.Count; i++)
+                newStringList[i] = finalResult[i];
+
+            return newStringList;
+        }
     }
 }

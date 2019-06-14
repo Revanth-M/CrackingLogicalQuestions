@@ -16,7 +16,7 @@ namespace CrackingLogicalQuestions
 
         static void Main(string[] args)
         {
-            
+            Program test = new Program();
             bool canContinue = true;
             while (canContinue)
             {
@@ -24,25 +24,33 @@ namespace CrackingLogicalQuestions
 
                 Console.WriteLine("Reverse String - 1 \n Check For Palindrome - 2 \n " +
                     "3rd Largest Integer in an Array - 3 \n 2D to 1D Array - 4 " +
-                    "Sum of digits of an Integer - 5");
+                    "Sum of digits of an Integer - 5 \n Unique Names from String Arrays - 6 " );
 
                 switch (Convert.ToInt16(Console.ReadLine()))
                 {
                     case 1:
-                        /*CallReverseString();*/
+                        test.CallReverseString();
                         break;
                     case 2:
-                        Console.WriteLine("Two");
-                        Console.WriteLine("Two");
+                        test.CallIsPalindrome();
+                        break;
+                    case 3:
+                        test.CallReturn3rdLargestIntegerInArray();
+                        break;
+                    case 4:
+                        test.CallReturn2DimensionalTo1DimensionalArray();
+                        break;
+                    case 5:
+                        test.CallSumOfDigitsOfPositiveInteger();
+                        break;
+                    case 6:
+                        test.CallUniqueNames();
                         break;
                     default:
-                        Console.WriteLine("Other");
+                        Console.WriteLine("Didn't choose a Valid Option !!");
                         break;
 
                 }
-
-               
-
                 Console.WriteLine("Continue, Y or N ?");
                 if (Convert.ToString(Console.ReadLine()).Trim().ToUpper() == "Y")
                     canContinue = true;
@@ -51,7 +59,7 @@ namespace CrackingLogicalQuestions
             Console.WriteLine("This program is about to be terminated !!");
             Console.Read();           
         }
-       
+
         private void CallReverseString()
         {
             Console.WriteLine("Please Input a string");
@@ -86,6 +94,14 @@ namespace CrackingLogicalQuestions
         {
             Console.WriteLine("Please input an Integer to get its SUM !!");
             logics.SumOfDigitsOfPositiveInteger(Convert.ToInt16(Console.ReadLine()));
+        }
+
+        private void CallUniqueNames()
+        {
+
+            string[] names1 = new string[] { "Ava", "Emma", "Olivia" };
+            string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
+            logics.UniqueNames(names1, names2);
         }
     }
 }
