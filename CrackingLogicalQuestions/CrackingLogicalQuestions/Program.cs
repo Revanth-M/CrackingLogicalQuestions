@@ -17,6 +17,7 @@ namespace CrackingLogicalQuestions
         static void Main(string[] args)
         {
             Program test = new Program();
+            #region
             bool canContinue = true;
             while (canContinue)
             {
@@ -24,7 +25,7 @@ namespace CrackingLogicalQuestions
 
                 Console.WriteLine("Reverse String - 1 \n Check For Palindrome - 2 \n " +
                     "3rd Largest Integer in an Array - 3 \n 2D to 1D Array - 4 " +
-                    "Sum of digits of an Integer - 5 \n Unique Names from String Arrays - 6 " );
+                    "Sum of digits of an Integer - 5 \n Unique Names from String Arrays - 6 ");
 
                 switch (Convert.ToInt16(Console.ReadLine()))
                 {
@@ -46,6 +47,15 @@ namespace CrackingLogicalQuestions
                     case 6:
                         test.CallUniqueNames();
                         break;
+                    case 7:
+                        test.CallSumOfIntegerArray();
+                        break;
+                    case 8:
+                        test.CallMakeListUnique();
+                        break;
+                    case 9:
+                        test.CallBinarySortingAlg();
+                        break;
                     default:
                         Console.WriteLine("Didn't choose a Valid Option !!");
                         break;
@@ -56,10 +66,11 @@ namespace CrackingLogicalQuestions
                     canContinue = true;
 
             }
+            #endregion
+
             Console.WriteLine("This program is about to be terminated !!");
             Console.Read();           
         }
-
         private void CallReverseString()
         {
             Console.WriteLine("Please Input a string");
@@ -102,6 +113,25 @@ namespace CrackingLogicalQuestions
             string[] names1 = new string[] { "Ava", "Emma", "Olivia" };
             string[] names2 = new string[] { "Olivia", "Sophia", "Emma" };
             logics.UniqueNames(names1, names2);
+        }
+
+        private void CallSumOfIntegerArray()
+        {
+            var intList = new List<int>() { 3, 6, 8 };
+            logics.SumOfIntegerArray(intList);
+        }
+
+        private void CallMakeListUnique()
+        {
+            List<int> intList = new List<int>() { 20,1659,710, 710, 1730, 1808, 2043, 1613, 1841, 1328, 504, 1730, 2545, 493, 879, 1441,
+            2043, 1613, 710, 1613, 1250};
+            logics.MakeListUnique(intList);
+        }
+
+        private void CallBinarySortingAlg()
+        {
+            List<int> intList = new List<int>() { 1, 2, 3 };
+            logics.BinarySortingAlg(intList);
         }
     }
 }
